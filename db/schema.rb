@@ -14,10 +14,15 @@
 ActiveRecord::Schema.define(:version => 20131017203825) do
 
   create_table "questions", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
     t.string   "query"
     t.string   "answer"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "questions_users", :force => true do |t|
+    t.integer "user_id"
+    t.integer "question_id"
   end
 
   create_table "users", :force => true do |t|
@@ -37,10 +42,5 @@ ActiveRecord::Schema.define(:version => 20131017203825) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
-
-  create_table "users_questions", :force => true do |t|
-    t.integer "user_id"
-    t.integer "question_id"
-  end
 
 end

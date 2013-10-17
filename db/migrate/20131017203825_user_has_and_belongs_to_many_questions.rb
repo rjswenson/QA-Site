@@ -1,11 +1,6 @@
 class UserHasAndBelongsToManyQuestions < ActiveRecord::Migration
   def change
-    change_table :questions do |t|
-      t.string :query
-      t.string :answer
-    end
-
-    create_table :users_questions do |t|
+    create_table :questions_users do |t|
       t.belongs_to :user
       t.belongs_to :question
     end

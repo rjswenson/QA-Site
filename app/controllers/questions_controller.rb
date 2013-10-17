@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /questions
   # GET /questions.json
   def index
@@ -44,6 +46,8 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
+        current_user.questions << @question
+
         format.html { redirect_to @question, notice: 'Question was successfully created.' }
         format.json { render json: @question, status: :created, location: @question }
       else
