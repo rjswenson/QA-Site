@@ -6,14 +6,12 @@
     <th></th>
     <th></th>
   </tr>
-
-<% @questions.each do |question| %>
-  <tr>
-    <td><%= link_to 'Show', question %></td>
-    <td><%= link_to 'Edit', edit_question_path(question) %></td>
-    <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<ol>
+  <% @questions.each do |question| %>
+   <td><li> <%= link_to "#{question.query}", question_path(question.id) %>
+    </li>
+  <% end %>
+  </ol>
 </table>
 
 <br />
