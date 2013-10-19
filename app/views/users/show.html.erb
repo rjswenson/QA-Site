@@ -1,0 +1,14 @@
+
+<h1> <%= "Welcome, #{@user.email}" %> </h1>
+<h3> ================================= </h3>
+<br/>
+<br/>
+
+<ol>
+  <% @user.questions.each do |question| %>
+    <li>
+      <%= link_to "#{question.query}", question_path %>
+    </li>
+  <% end %>
+</ol>
+

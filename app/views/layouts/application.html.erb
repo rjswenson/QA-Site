@@ -6,7 +6,16 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+<header>
+  <ul class="nav nav-pills nav-fixed-top">
+    <li><%= link_to "Questions List", questions_path %></li>
+    <li><%= link_to "Users List", users_path %></li>
+
+    <li><%= link_to "Create a Question", new_question_path %></li>
+  </ul>
+</header>
 
 <%= yield %>
 

@@ -1,7 +1,10 @@
 QASite::Application.routes.draw do
-  root :to => 'questions#index'
+
+  root :to => 'users#index'
   resources :questions
   devise_for :users
+  resources :users, :only => [:show, :index]
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

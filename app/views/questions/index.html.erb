@@ -1,18 +1,12 @@
 <h1>Listing questions</h1>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+
 <ol>
   <% @questions.each do |question| %>
    <td><li> <%= link_to "#{question.query}", question_path(question.id) %>
-    </li>
+    </li><br/>
   <% end %>
   </ol>
-</table>
 
 <br />
 
